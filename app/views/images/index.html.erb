@@ -1,0 +1,7 @@
+<% @images.each do |image| %>
+    <img src="<%= image.avatar.url(:thumb) %>"/>
+    <p><a href="<%= image.avatar.url(:thumb) %>"><%= image.avatar.url(:thumb) %></a></p>
+<% end %>
+<%= form_for @image, url: '/', html: { multipart: true } do |form| %>
+    <%= form.file_field :avatar, class: 'load_image' %>
+<% end %>
